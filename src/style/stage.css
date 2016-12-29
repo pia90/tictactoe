@@ -1,0 +1,15 @@
+.o-marker {
+  color: #D2691E;
+  text-shadow: 1px 1px 1px #D2691E;
+}
+.o-marker:before {
+  content: "O";
+}
+
+.x-marker {
+  color: #1e8f01;
+  text-shadow: 1px 1px 1px #1e8f01;
+}
+.x-marker:before {
+  content: "X";
+}
