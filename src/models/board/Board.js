@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import Row from './Row';
+import Row from '../row/Row';
 
 class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
       board: [['', '', ''], ['', '', ''], ['', '', '']],
-      cpu: 'X',
       currentPlayer: 'O',
       winner: '',
-      tie: ''
+      tie: false
     };
     this.setPlayer = this.setPlayer.bind(this);
     this.setCell = this.setCell.bind(this);
@@ -171,7 +170,7 @@ class Board extends Component {
           const board = [...this.getBoardNextMove(this.state.board, this.state.currentPlayer === 'O' ? 0 : 1)[1]];
           this.setState({ board });
           this.checkWinner()
-          
+
           //change the player to create the animation efect between players
           setTimeout(function() {
             this.setPlayer()
